@@ -1,0 +1,36 @@
+{
+  "name": "bkend",
+  "version": "1.0.0",
+  "description": "package for blog bkend",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jianda1013/blog-backend.git"
+  },
+  "author": "jianda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jianda1013/blog-backend/issues"
+  },
+  "homepage": "https://github.com/jianda1013/blog-backend#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.1",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
+  },
+  "devDependencies": {
+    "install": "^0.13.0",
+    "npm": "^6.14.8",
+    "swagger-jsdoc": "^5.0.0",
+    "swagger-ui-express": "^4.1.4"
+  }
+}

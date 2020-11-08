@@ -1,0 +1,83 @@
+{
+	"openapi": "3.0.0",
+	"info": {
+		"version": "1.0.0",
+		"title": "blog bkend test"
+	},
+	"tags": [
+		{
+			"name": "user"
+		}
+	],
+	"consumes": [
+		"application/json"
+	],
+	"produces": [
+		"application/json"
+	],
+	"paths": {
+		"/user/signup": {
+			"post": {
+				"tags": [
+					"user"
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "account",
+						"account": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "passwd",
+						"passwd": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "user_name",
+						"user_name": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				}
+			}
+		},
+		"/user/login": {
+			"post": {
+				"tags": [
+					"user"
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "account",
+						"account": {
+							"type": "string"
+						}
+					},
+					{
+						"in": "query",
+						"name": "passwd",
+						"passwd": {
+							"type": "string"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "OK"
+					}
+				}
+			}
+		}
+	}
+}
