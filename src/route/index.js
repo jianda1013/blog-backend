@@ -14,4 +14,6 @@ module.exports = function (app, cors) {
 	),
 	
 	require('./user')(app, cors);
+    require('./article')(app, cors);
+    require('./note')(app, cors);
 }

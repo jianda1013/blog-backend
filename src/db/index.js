@@ -7,11 +7,12 @@ const sequelize = new Sequelize(process.env.DB_NAME, process.env.DB_USER, proces
 	logging: false
 });
 
-const db = {}
+const db = {};
 
-db.sequelize = sequelize
-db.Sequelize = Sequelize
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
 
-db.user = require('./user')(sequelize, Sequelize)
+db.user = require('./user')(sequelize, Sequelize);
+db.article = require('./article')(sequelize, Sequelize);
 
 module.exports = db;

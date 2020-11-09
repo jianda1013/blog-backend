@@ -1,83 +1,190 @@
 {
-	"openapi": "3.0.0",
-	"info": {
-		"version": "1.0.0",
-		"title": "blog bkend test"
-	},
-	"tags": [
-		{
-			"name": "user"
-		}
-	],
-	"consumes": [
-		"application/json"
-	],
-	"produces": [
-		"application/json"
-	],
-	"paths": {
-		"/user/signup": {
-			"post": {
-				"tags": [
-					"user"
-				],
-				"parameters": [
-					{
-						"in": "query",
-						"name": "account",
-						"account": {
-							"type": "string"
-						}
-					},
-					{
-						"in": "query",
-						"name": "passwd",
-						"passwd": {
-							"type": "string"
-						}
-					},
-					{
-						"in": "query",
-						"name": "user_name",
-						"user_name": {
-							"type": "string"
-						}
-					}
-				],
-				"responses": {
-					"200": {
-						"description": "OK"
-					}
-				}
-			}
-		},
-		"/user/login": {
-			"post": {
-				"tags": [
-					"user"
-				],
-				"parameters": [
-					{
-						"in": "query",
-						"name": "account",
-						"account": {
-							"type": "string"
-						}
-					},
-					{
-						"in": "query",
-						"name": "passwd",
-						"passwd": {
-							"type": "string"
-						}
-					}
-				],
-				"responses": {
-					"200": {
-						"description": "OK"
-					}
-				}
-			}
-		}
-	}
+    "openapi": "3.0.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "blog bkend test"
+    },
+    "components": {
+        "securitySchemes": {
+            "ApiKeyAuth": {
+                "type": "apiKey",
+                "in": "header",
+                "name": "token"
+            }
+        }
+    },
+    "security": [
+        {
+            "ApiKeyAuth": []
+        }
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "security": {
+            "ApiKeyAuth": []
+        },
+        "/user/signup": {
+            "post": {
+                "tags": [
+                    "user"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "account",
+                        "account": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "passwd",
+                        "passwd": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "user_name",
+                        "user_name": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/user/login": {
+            "post": {
+                "tags": [
+                    "user"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "account",
+                        "account": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "passwd",
+                        "passwd": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/article/list": {
+            "get": {
+                "tags": [
+                    "article"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "group",
+                        "group": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/article/text": {
+            "get": {
+                "tags": [
+                    "article"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "id",
+                        "id": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/article/create": {
+            "post": {
+                "tags": [
+                    "article"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "title",
+                        "title": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "group",
+                        "group": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "text",
+                        "text": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/article/update": {
+            "put": {
+                "tags": [
+                    "article"
+                ],
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "id",
+                        "id": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "title",
+                        "title": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "group",
+                        "group": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "in": "query",
+                        "name": "text",
+                        "text": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        }
+    }
 }
